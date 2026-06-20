@@ -6,7 +6,7 @@
     <link rel="preload" href="font/IRANSansX-DemiBold.woff2" as="font" type="font/woff2" crossorigin>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>محمد نجفی | توسعه دهنده فرانت اند</title>
+    <title id="pageTitle">محمد نجفی | توسعه دهنده فرانت اند</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,109 +33,47 @@
         }
 
         @keyframes revealItem {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
-        /* انیمیشن برای دایره‌های متحرک پس‌زمینه */
         @keyframes float1 {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-
-            50% {
-                transform: translate(50px, 50px) rotate(180deg);
-            }
-
-            100% {
-                transform: translate(0, 0) rotate(360deg);
-            }
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(50px, 50px) rotate(180deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
         }
 
         @keyframes float2 {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-
-            50% {
-                transform: translate(-50px, 30px) rotate(-180deg);
-            }
-
-            100% {
-                transform: translate(0, 0) rotate(-360deg);
-            }
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-50px, 30px) rotate(-180deg); }
+            100% { transform: translate(0, 0) rotate(-360deg); }
         }
 
         @keyframes float3 {
-            0% {
-                transform: translate(0, 0);
-            }
-
-            50% {
-                transform: translate(30px, -40px);
-            }
-
-            100% {
-                transform: translate(0, 0);
-            }
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -40px); }
+            100% { transform: translate(0, 0); }
         }
 
-        /* انیمیشن برای SVGهای تزئینی */
         @keyframes rotateSlow {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         @keyframes pulseGlow {
-
-            0%,
-            100% {
-                opacity: 0.3;
-                filter: drop-shadow(0 0 5px rgba(191, 39, 21, 0.3));
-            }
-
-            50% {
-                opacity: 0.6;
-                filter: drop-shadow(0 0 20px rgba(191, 39, 21, 0.6));
-            }
+            0%, 100% { opacity: 0.3; filter: drop-shadow(0 0 5px rgba(191, 39, 21, 0.3)); }
+            50% { opacity: 0.6; filter: drop-shadow(0 0 20px rgba(191, 39, 21, 0.6)); }
         }
 
         @keyframes gradientBG {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         @keyframes revealNavItem {
-            from {
-                opacity: 0;
-                transform: translateX(60px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .nav-item {
@@ -144,24 +82,11 @@
             animation: revealNavItem 0.35s ease-out forwards;
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #A94438; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c45545; }
 
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #A94438;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #c45545;
-        }
-
-        /* انیمیشن برای مهارت‌ها */
         .skill-item {
             opacity: 0;
             transform: translateX(-30px);
@@ -182,36 +107,17 @@
             width: var(--target-width);
         }
 
-        /* انیمیشن برای SVGها */
-        .svg-rotate {
-            animation: rotateSlow 30s linear infinite;
-        }
+        .svg-rotate { animation: rotateSlow 30s linear infinite; }
+        .svg-pulse { animation: pulseGlow 3s ease-in-out infinite; }
+        .svg-float { animation: float3 8s ease-in-out infinite; }
 
-        .svg-pulse {
-            animation: pulseGlow 3s ease-in-out infinite;
-        }
-
-        .svg-float {
-            animation: float3 8s ease-in-out infinite;
-        }
-
-        /* رفع مشکل اسکرول افقی */
-        html,
-        body {
-            overflow-x: hidden;
-            width: 100%;
-        }
-
-        .no-horizontal-scroll {
-            overflow-x: hidden;
-        }
+        html, body { overflow-x: hidden; width: 100%; }
+        .no-horizontal-scroll { overflow-x: hidden; }
 
         /* ===== هدر موبایل ثابت ===== */
         #mobile-header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 100;
             padding: 16px 20px;
             transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -225,470 +131,661 @@
             border-bottom-color: rgba(255, 255, 255, 0.08);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
+
+        /* ===== دکمه زبان دسکتاپ ===== */
+        .lang-wrapper { position: relative; }
+
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .1);
+            backdrop-filter: blur(12px);
+            color: white;
+            transition: .3s;
+            cursor: pointer;
+            font-size: 14px;
+            height: 48px;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .2);
+        }
+
+        .lang-btn .chevron {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .lang-wrapper.open .lang-btn .chevron { transform: rotate(180deg); }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 120%;
+            right: 0;
+            min-width: 150px;
+            background: rgba(15, 15, 15, .95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 16px;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+            z-index: 999;
+        }
+
+        .lang-wrapper.open .lang-dropdown { opacity: 1; visibility: visible; }
+
+        .lang-option { padding: 12px 16px; cursor: pointer; transition: .3s; }
+        .lang-option:hover { background: rgba(255, 255, 255, .08); }
+        .lang-option.active { color: #BF2715; }
+
+        /* ===== دکمه زبان موبایل ===== */
+        #mobileLangBtn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .15);
+            color: white;
+            cursor: pointer;
+            transition: .3s;
+            font-size: 13px;
+            backdrop-filter: blur(8px);
+            height: 40px;
+            white-space: nowrap;
+        }
+
+        #mobileLangBtn:hover { background: rgba(255, 255, 255, .15); }
+
+        #mobileLangBtn .chevron {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            font-size: 10px;
+        }
+
+        #mobileLangWrapper.open #mobileLangBtn .chevron { transform: rotate(180deg); }
+
+        #mobileLangDropdown {
+            position: absolute;
+            top: 110%;
+            right: 0;
+            min-width: 140px;
+            background: rgba(15, 15, 15, .96);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 14px;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+            z-index: 999;
+        }
+
+        #mobileLangWrapper.open #mobileLangDropdown { opacity: 1; visibility: visible; }
+
+        .mobile-lang-option { padding: 10px 16px; cursor: pointer; transition: .3s; font-size: 13px; }
+        .mobile-lang-option:hover { background: rgba(255, 255, 255, .08); }
+        .mobile-lang-option.active { color: #BF2715; }
+
+        /* ===== تنظیمات ارتفاع هدر دسکتاپ ===== */
+        .nav-link-item {
+            height: 48px !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        .nav-link-item a {
+            height: 48px !important;
+            display: flex !important;
+            align-items: center !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            white-space: nowrap !important;
+        }
+
+        #desktopNav { display: flex !important; align-items: center !important; }
+
+        /* ===== موبایل ===== */
+        .mobile-item {
+            white-space: nowrap !important;
+            font-size: 16px !important;
+            padding: 12px 16px !important;
+        }
+
+        #mobileMenu .rounded-3xl { min-width: 200px !important; }
+
+        @media (max-width: 768px) {
+            .mobile-item { font-size: 15px !important; padding: 10px 14px !important; }
+            #mobileMenu .rounded-3xl { padding: 12px !important; min-width: 180px !important; }
+            #mobileLangBtn { font-size: 12px !important; padding: 6px 12px !important; height: 36px !important; }
+            #mobileLangBtn .chevron { font-size: 9px !important; }
+            #desktopNav { display: none !important; }
+        }
+
+        @media (min-width: 769px) {
+            #desktopNav { display: flex !important; }
+            #mobile-header { display: none !important; }
+        }
+
+        /* ===== LTR برای حالت انگلیسی ===== */
+        .hero-en { text-align: left !important; direction: ltr !important; }
+        .hero-en h1, .hero-en h2 { text-align: left !important; }
+        .about-en { direction: ltr !important; }
+        .about-en h2, .about-en p { text-align: left !important; }
+        .contact-en { direction: ltr !important; }
+        .contact-en h2, .contact-en h3, .contact-en p, .contact-en a { text-align: left !important; }
+        .footer-en { direction: ltr !important; }
     </style>
 </head>
 
 <body class="text-white min-h-screen relative">
     <div class="no-horizontal-scroll">
 
-        <!-- پس‌زمینه گرادیان با افکت حرکت -->
-        <div
-            class="fixed inset-0 -z-10 bg-gradient-to-br from-[#1a0a0a] via-[#0a0a0a] to-[#1a0505] animate-[gradientBG_15s_ease_infinite] bg-[length:200%_200%]">
-        </div>
+        <!-- پس‌زمینه گرادیان -->
+        <div class="fixed inset-0 -z-10 bg-gradient-to-br from-[#1a0a0a] via-[#0a0a0a] to-[#1a0505] animate-[gradientBG_15s_ease_infinite] bg-[length:200%_200%]"></div>
 
-        <!-- دایره‌های تزئینی متحرک -->
+        <!-- دایره‌های تزئینی -->
         <div class="fixed inset-0 -z-10 overflow-hidden">
-            <div
-                class="absolute top-20 left-10 w-72 h-72 bg-[#A94438]/10 rounded-full blur-3xl animate-[float1_20s_ease-in-out_infinite]">
-            </div>
-            <div
-                class="absolute bottom-20 right-10 w-96 h-96 bg-[#c45545]/10 rounded-full blur-3xl animate-[float2_25s_ease-in-out_infinite]">
-            </div>
-            <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#A94438]/5 rounded-full blur-3xl animate-[float3_30s_ease-in-out_infinite]">
-            </div>
-            <div
-                class="absolute top-40 right-1/4 w-48 h-48 bg-[#ff6b5b]/5 rounded-full blur-3xl animate-[float1_18s_ease-in-out_infinite] delay-1000">
-            </div>
-            <div
-                class="absolute bottom-40 left-1/3 w-64 h-64 bg-[#A94438]/8 rounded-full blur-3xl animate-[float2_22s_ease-in-out_infinite] delay-500">
-            </div>
+            <div class="absolute top-20 left-10 w-72 h-72 bg-[#A94438]/10 rounded-full blur-3xl animate-[float1_20s_ease-in-out_infinite]"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#c45545]/10 rounded-full blur-3xl animate-[float2_25s_ease-in-out_infinite]"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#A94438]/5 rounded-full blur-3xl animate-[float3_30s_ease-in-out_infinite]"></div>
+            <div class="absolute top-40 right-1/4 w-48 h-48 bg-[#ff6b5b]/5 rounded-full blur-3xl animate-[float1_18s_ease-in-out_infinite] delay-1000"></div>
+            <div class="absolute bottom-40 left-1/3 w-64 h-64 bg-[#A94438]/8 rounded-full blur-3xl animate-[float2_22s_ease-in-out_infinite] delay-500"></div>
         </div>
 
-        <!-- ==================== SVGهای تزئینی ==================== -->
-
-        <!-- گوشه بالا راست - Subtraction 1 -->
+        <!-- SVGهای تزئینی -->
         <div class="fixed top-5 right-5 z-0 opacity-50 pointer-events-none svg-rotate">
             <img src="pic-s/Subtraction 1.svg" class="w-20 h-20 md:w-28 md:h-28">
         </div>
-
-        <!-- گوشه بالا چپ - Ellipse 1 -->
         <div class="fixed top-5 left-5 z-0 opacity-40 pointer-events-none svg-pulse">
             <img src="pic-s/Ellipse 1.svg" class="w-16 h-16 md:w-24 md:h-24">
         </div>
-
-        <!-- گوشه پایین راست - Group 1 -->
-        <div class="fixed bottom-5 right-5 z-0 opacity-40 pointer-events-none svg-rotate"
-            style="animation-duration: 25s;">
+        <div class="fixed bottom-5 right-5 z-0 opacity-40 pointer-events-none svg-rotate" style="animation-duration: 25s;">
             <img src="pic-s/Group 1.svg" class="w-24 h-24 md:w-32 md:h-32">
         </div>
-
-        <!-- گوشه پایین چپ - Intersection 1 -->
         <div class="fixed bottom-5 left-5 z-0 opacity-45 pointer-events-none svg-float">
             <img src="pic-s/Intersection 1.svg" class="w-20 h-20 md:w-28 md:h-28">
         </div>
-
-        <!-- المان شناور در سمت راست -->
-        <div class="fixed top-1/3 right-8 z-0 opacity-25 pointer-events-none svg-float"
-            style="animation-duration: 12s;">
+        <div class="fixed top-1/3 right-8 z-0 opacity-25 pointer-events-none svg-float" style="animation-duration: 12s;">
             <img src="pic-s/Subtraction 1.svg" class="w-12 h-12 md:w-16 md:h-16">
         </div>
-
-        <!-- المان شناور در سمت چپ -->
-        <div class="fixed bottom-1/3 left-8 z-0 opacity-25 pointer-events-none svg-float"
-            style="animation-duration: 14s; animation-delay: 2s;">
+        <div class="fixed bottom-1/3 left-8 z-0 opacity-25 pointer-events-none svg-float" style="animation-duration: 14s; animation-delay: 2s;">
             <img src="pic-s/Ellipse 1.svg" class="w-14 h-14 md:w-20 md:h-20">
         </div>
-
-        <!-- المان تزئینی پشت عکس پروفایل -->
-        <div class="fixed top-1/2 right-1/4 z-0 opacity-15 pointer-events-none svg-rotate"
-            style="animation-duration: 40s; transform: translateY(-50%);">
+        <div class="fixed top-1/2 right-1/4 z-0 opacity-15 pointer-events-none svg-rotate" style="animation-duration: 40s; transform: translateY(-50%);">
             <img src="pic-s/Intersection 1.svg" class="w-64 h-64 md:w-96 md:h-96">
         </div>
 
-        <!-- پترن نقطه‌چین ظریف -->
-        <div class="fixed inset-0 -z-10 opacity-5"
-            style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 1px); background-size: 40px 40px;">
-        </div>
+        <div class="fixed inset-0 -z-10 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 1px); background-size: 40px 40px;"></div>
 
         <header class="p-5 relative z-50">
 
-            <!-- موبایل هدر جدید -->
-            <div id="mobile-header" class="md:hidden">
+            <!-- موبایل هدر -->
+            <div id="mobile-header">
                 <div class="flex justify-between items-center">
-                    <button id="menuBtn" class="text-white text-4xl
-                drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]
-                transition-all duration-300 hover:scale-110">
-                        ☰
-                    </button>
+                    <button id="menuBtn" class="text-white text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.4)] transition-all duration-300 hover:scale-110">☰</button>
 
-                    <img src="pic-s/logo-2.webp" alt="لوگو" class="w-12 h-12">
+                    <div class="flex items-center gap-3">
+                        <!-- دکمه زبان موبایل -->
+                        <div id="mobileLangWrapper" class="relative">
+                            <button id="mobileLangBtn" onclick="toggleMobileDropdown()">
+                                🌐 <span id="mobile-lang-label">FA</span>
+                                <span class="chevron">▼</span>
+                            </button>
+                            <div id="mobileLangDropdown">
+                                <div class="mobile-lang-option active" onclick="setLang('fa')">🇮🇷 فارسی</div>
+                                <div class="mobile-lang-option" onclick="setLang('en')">🇬🇧 English</div>
+                            </div>
+                        </div>
+                        <img src="pic-s/logo-2.webp" alt="لوگو" class="w-12 h-12">
+                    </div>
                 </div>
 
-                <div id="mobileMenu" class=" max-h-0 opacity-0 transition-all duration-500">
-                    <div
-                        class=" rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl p-4 shadow-[0_0_40px_rgba(255,255,255,0.08)] text-right  ">
-
-                        <div><a href="index.html"
-                                class="mobile-item block px-5 py-2 text-white rounded-xl transition-all duration-300">خانه</a>
-                        </div>
-
-                        <div><a href="about-me.html"
-                                class="mobile-item block px-5 py-2 text-white rounded-xl transition-all duration-300">درباره
-                                من</a></div>
-
-                        <div><a href="mahart-ha.html"
-                                class="mobile-item block px-5 py-2 text-white rounded-xl transition-all duration-300">مهارت
-                                ها</a></div>
-
-                                 <div><a href="#portfolio"
-                                class="mobile-item block px-5 py-2 text-white rounded-xl transition-all duration-300">نمونه‌کارها
-                                </a></div>
-
-                        <div><a href="#contact"
-                                class="mobile-item block px-5 py-2 text-white rounded-xl transition-all duration-300">ارتباط
-                                با من</a></div>
+                <div id="mobileMenu" class="max-h-0 opacity-0 transition-all duration-500 overflow-hidden">
+                    <div class="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-2xl p-4 shadow-[0_0_40px_rgba(255,255,255,0.08)] text-right">
+                        <div><a href="index.html" class="mobile-item block px-4 py-3 text-white rounded-xl transition-all duration-300" data-i18n="navHome">خانه</a></div>
+                        <div><a href="about-me.html" class="mobile-item block px-4 py-3 text-white rounded-xl transition-all duration-300" data-i18n="navAbout">درباره من</a></div>
+                        <div><a href="mahart-ha.html" class="mobile-item block px-4 py-3 text-white rounded-xl transition-all duration-300" data-i18n="navSkills">مهارت ها</a></div>
+                        <div><a href="#portfolio" class="mobile-item block px-4 py-3 text-white rounded-xl transition-all duration-300" data-i18n="navPortfolio">نمونه‌کارها</a></div>
+                        <div><a href="#contact" class="mobile-item block px-4 py-3 text-white rounded-xl transition-all duration-300" data-i18n="navContact">ارتباط با من</a></div>
                     </div>
                 </div>
             </div>
 
-            <!-- دسکتاپ (همان قبلی خودت) -->
-            <nav class="hidden md:flex justify-center items-center gap-5 md:gap-8 mt-4">
-                <div class="overflow-hidden h-[60px]">
-                    <a href="index.html"
-                        class="block px-5 md:px-7 py-2 md:py-3 text-white text-base md:text-lg rounded-xl opacity-0 animate-[revealItem_0.3s_ease-out_forwards] transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 hover:rounded-full hover:scale-105"
-                        style="animation-delay:0s">خانه</a>
+            <!-- دسکتاپ -->
+            <nav id="desktopNav" class="hidden md:flex justify-center items-center gap-5 md:gap-8 mt-4">
+                <div class="overflow-hidden h-[48px] nav-item nav-link-item">
+                    <a href="index.html" class="block px-5 md:px-7 py-2 md:py-3 text-white text-base md:text-lg rounded-xl opacity-0 animate-[revealItem_0.3s_ease-out_forwards] transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 hover:rounded-full hover:scale-105" style="animation-delay:0s" data-i18n="navHome">خانه</a>
+                </div>
+                <div class="overflow-hidden h-[48px] nav-item nav-link-item">
+                    <a href="about-me.html" class="block px-5 md:px-7 py-2 md:py-3 text-white text-base md:text-lg rounded-xl opacity-0 animate-[revealItem_0.3s_ease-out_forwards] transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 hover:rounded-full hover:scale-105" style="animation-delay:0.25s" data-i18n="navAbout">درباره من</a>
+                </div>
+                <div class="overflow-hidden h-[48px] nav-item nav-link-item">
+                    <a href="mahart-ha.html" class="block px-5 md:px-7 py-2 md:py-3 text-white text-base md:text-lg rounded-xl opacity-0 animate-[revealItem_0.3s_ease-out_forwards] transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 hover:rounded-full hover:scale-105" style="animation-delay:0.5s" data-i18n="navSkills">مهارت ها</a>
+                </div>
+                <div class="overflow-hidden h-[48px] nav-item nav-link-item">
+                    <a href="#portfolio" class="block px-5 md:px-7 py-2 md:py-3 text-white text-base md:text-lg rounded-xl opacity-0 animate-[revealItem_0.3s_ease-out_forwards] transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 hover:rounded-full hover:scale-105" style="animation-delay:0.75s" data-i18n="navPortfolio">نمونه کارها</a>
+                </div>
+                <div class="overflow-hidden h-[48px] nav-item nav-link-item">
+                    <a href="#contact" class="block px-5 md:px-7 py-2 md:py-3 text-white text-base md:text-lg rounded-xl opacity-0 animate-[revealItem_0.3s_ease-out_forwards] transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 hover:rounded-full hover:scale-105" style="animation-delay:1s" data-i18n="navContact">ارتباط با من</a>
                 </div>
 
-                <div class="overflow-hidden h-[60px]">
-                    <a href="about-me.html"
-                        class="block px-5 md:px-7 py-2 md:py-3 text-white text-base md:text-lg rounded-xl opacity-0 animate-[revealItem_0.3s_ease-out_forwards] transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 hover:rounded-full hover:scale-105"
-                        style="animation-delay:0.25s">درباره من</a>
-                </div>
-
-                <div class="overflow-hidden h-[60px]">
-                    <a href="mahart-ha.html"
-                        class="block px-5 md:px-7 py-2 md:py-3 text-white text-base md:text-lg rounded-xl opacity-0 animate-[revealItem_0.3s_ease-out_forwards] transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 hover:rounded-full hover:scale-105"
-                        style="animation-delay:0.5s">مهارت ها</a>
-                </div>
-                <div class="overflow-hidden h-[60px]">
-                    <a href="#portfolio"
-                        class="block px-5 md:px-7 py-2 md:py-3 text-white text-base md:text-lg rounded-xl opacity-0 animate-[revealItem_0.3s_ease-out_forwards] transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 hover:rounded-full hover:scale-105"
-                        style="animation-delay:0.5s">نمونه کارها</a>
-                </div>
-
-                <div class="overflow-hidden h-[60px]">
-                    <a href="#contact"
-                        class="block px-5 md:px-7 py-2 md:py-3 text-white text-base md:text-lg rounded-xl opacity-0 animate-[revealItem_0.3s_ease-out_forwards] transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:border hover:border-white/20 hover:rounded-full hover:scale-105"
-                        style="animation-delay:1s">ارتباط با من</a>
+                <!-- دکمه زبان دسکتاپ -->
+                <div class="flex items-center nav-item-lang">
+                    <div class="lang-wrapper opacity-0 animate-[revealItem_0.3s_ease-out_forwards]" style="animation-delay:1.25s" id="langWrapper">
+                        <button class="lang-btn" onclick="toggleDropdown()">
+                            🌐
+                            <span id="lang-label">FA</span>
+                            <span class="chevron">▼</span>
+                        </button>
+                        <div class="lang-dropdown">
+                            <div class="lang-option active" onclick="setLang('fa')">🇮🇷 فارسی</div>
+                            <div class="lang-option" onclick="setLang('en')">🇬🇧 English</div>
+                        </div>
+                    </div>
                 </div>
             </nav>
-
         </header>
+
+        <!-- فاصله برای موبایل -->
+        <div class="md:hidden h-[72px]"></div>
 
         <main class="container mx-auto px-1 relative z-10">
 
-            <!-- بخش خانه (Hero) -->
-            <section id="home"
-                class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 min-h-[70vh] md:min-h-[80vh] mt-10 md:-mt-16">
+            <!-- بخش Hero -->
+            <section id="home" class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 min-h-[70vh] md:min-h-[80vh] mt-10 md:-mt-16">
 
-                <div class="text-center md:text-right flex-1 order-2 md:order-1 mt-8 md:mt-0" data-aos="fade-up"
-                    data-aos-duration="800">
-                    <h1 class="text-[#BF2715] text-4xl md:text-8xl font-bold">محمد نجفی</h1>
+                <div id="heroText" class="text-center md:text-right flex-1 order-2 md:order-1 mt-8 md:mt-0" data-aos="fade-up" data-aos-duration="800">
+                    <h1 class="text-[#BF2715] text-4xl md:text-8xl font-bold" data-i18n="heroName">محمد نجفی</h1>
                     <br>
-                    <h2 class="text-gray-400 text-xl md:text-3xl font-bold mt-2" data-aos="fade-up"
-                        data-aos-duration="800" data-aos-delay="100">
-                        توسعه دهنده فرانت اند
-                    </h2>
+                    <h2 class="text-gray-400 text-xl md:text-3xl font-bold mt-2" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" data-i18n="heroRole1">توسعه دهنده فرانت اند</h2>
                     <br>
-                    <h2 class="text-gray-400 text-xl md:text-3xl font-bold" data-aos="fade-up" data-aos-duration="800"
-                        data-aos-delay="200">
-                        طراح UI/UX
-                    </h2>
+                    <h2 class="text-gray-400 text-xl md:text-3xl font-bold" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" data-i18n="heroRole2">طراح UI/UX</h2>
                     <br>
-                    <h2 class="text-gray-400 text-xl md:text-3xl font-bold" data-aos="fade-up" data-aos-duration="800"
-                        data-aos-delay="300">
-                        طراح Adobe XD
-                    </h2>
+                    <h2 class="text-gray-400 text-xl md:text-3xl font-bold" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" data-i18n="heroRole3">طراح Adobe XD</h2>
 
                     <div class="mt-6 md:mt-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                        <a href="#portfolio" class="inline-block px-6 md:px-8 py-2 md:py-3 bg-[#A94438]/20 text-white rounded-full 
-                            backdrop-blur-md border border-white/20 
-                            hover:bg-[#BF2715]/40 hover:border-white/30 
-                            transition-all duration-300 shadow-lg hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.2)] 
-                            hover:scale-105 text-sm md:text-base">
+                        <a href="#portfolio" class="inline-block px-6 md:px-8 py-2 md:py-3 bg-[#A94438]/20 text-white rounded-full backdrop-blur-md border border-white/20 hover:bg-[#BF2715]/40 hover:border-white/30 transition-all duration-300 shadow-lg hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.2)] hover:scale-105 text-sm md:text-base" data-i18n="heroCTA">
                             مشاهده نمونه کارها
                         </a>
                     </div>
 
-                    <div class="mt-10 md:mt-16 text-gray-500 text-xs md:text-sm" data-aos="fade-up"
-                        data-aos-delay="500">
+                    <div class="mt-10 md:mt-16 text-gray-500 text-xs md:text-sm" data-aos="fade-up" data-aos-delay="500" data-i18n="heroScroll">
                         اسکرول کنید ↓
                     </div>
                 </div>
 
-                <div class="flex justify-center md:justify-start order-1 md:order-2 mt-4 md:mt-0" data-aos="fade-left"
-                    data-aos-duration="800" data-aos-delay="150">
-                    <img src="pic-s/logo-2.webp" loading="lazy" class="w-48 h-48 md:w-96 md:h-96 ">
+                <div class="flex justify-center md:justify-start order-1 md:order-2 mt-4 md:mt-0" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+                    <img src="pic-s/logo-2.webp" loading="lazy" class="w-48 h-48 md:w-96 md:h-96">
                 </div>
             </section>
 
-
             <!-- بخش درباره من -->
             <section id="about" class="py-20 border-t border-white/10 px-4 md:px-0">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#BF2715] mb-8" data-aos="fade-up">
-                    درباره من
-                </h2>
-
-                <!-- 👇 محدود شدن عرض فقط در موبایل -->
+                <h2 id="aboutHeading" class="text-3xl md:text-4xl font-bold text-[#BF2715] mb-8" data-aos="fade-up" data-i18n="aboutHeading">درباره من</h2>
                 <div class="max-w-xs sm:max-w-sm md:max-w-none mx-auto">
-                    <p class="text-gray-300 text-lg leading-relaxed text-justify md:text-right" data-aos="fade-up"
-                        data-aos-delay="100">
-                        من محمد نجفی هستم. توسعه دهنده فرانت اند و طراح رابط کاربری با تمرکز روی طراحی دیجیتال و ایجاد
-                        تجربه
-                        های کاربری مدرن و حرفه ای.
-                        عاشق طراحی، تصمیم گیری و مدیریت سیستم های مختلف هستم و همیشه به دنبال یادگیری تکنولوژی های جدید
-                        برای
-                        ساخت پروژه های خلاقانه و با کیفیت.
+                    <p id="aboutText" class="text-gray-300 text-lg leading-relaxed text-justify md:text-right" data-aos="fade-up" data-aos-delay="100" data-i18n="aboutText">
+                        من محمد نجفی هستم. توسعه دهنده فرانت اند و طراح رابط کاربری با تمرکز روی طراحی دیجیتال و ایجاد تجربه های کاربری مدرن و حرفه ای. عاشق طراحی، تصمیم گیری و مدیریت سیستم های مختلف هستم و همیشه به دنبال یادگیری تکنولوژی های جدید برای ساخت پروژه های خلاقانه و با کیفیت.
                     </p>
-
                     <br>
-
                     <div class="mt-6 md:mt-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                        <a href="about-me.html" class="inline-block px-6 md:px-8 py-2 md:py-3 bg-[#A94438]/20 text-white rounded-full 
-                backdrop-blur-md border border-white/20 
-                hover:bg-[#BF2715]/40 hover:border-white/30 
-                transition-all duration-300 shadow-lg hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.2)] 
-                hover:scale-105 text-sm md:text-base">
+                        <a href="about-me.html" class="inline-block px-6 md:px-8 py-2 md:py-3 bg-[#A94438]/20 text-white rounded-full backdrop-blur-md border border-white/20 hover:bg-[#BF2715]/40 hover:border-white/30 transition-all duration-300 shadow-lg hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.2)] hover:scale-105 text-sm md:text-base" data-i18n="aboutCTA">
                             بیشتر بدانید ...
                         </a>
                     </div>
                 </div>
             </section>
 
-
             <!-- بخش مهارت ها -->
             <section id="skills" class="py-20 border-t border-white/10 px-4 md:px-0">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#BF2715] mb-8" data-aos="fade-up">
-                    مهارت های من
-                </h2>
-
-                <!-- 👇 فقط اینجا در موبایل کوچیک‌تر شده -->
+                <h2 class="text-3xl md:text-4xl font-bold text-[#BF2715] mb-8" data-aos="fade-up" data-i18n="skillsHeading">مهارت های من</h2>
                 <div class="space-y-6 w-full max-w-xs sm:max-w-sm md:max-w-none mx-auto">
-
                     <div class="skill-item w-full" data-skill="95">
-                        <div class="flex justify-between mb-2">
-                            <span>HTML</span>
-                            <span class="skill-percent">0%</span>
-                        </div>
+                        <div class="flex justify-between mb-2"><span>HTML</span><span class="skill-percent">0%</span></div>
                         <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
                             <div class="bg-[#BF2715] h-3 rounded-full progress-bar" style="width: 0%"></div>
                         </div>
                     </div>
-
                     <div class="skill-item w-full" data-skill="90">
-                        <div class="flex justify-between mb-2">
-                            <span>CSS</span>
-                            <span class="skill-percent">0%</span>
-                        </div>
+                        <div class="flex justify-between mb-2"><span>CSS</span><span class="skill-percent">0%</span></div>
                         <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
                             <div class="bg-[#BF2715] h-3 rounded-full progress-bar" style="width: 0%"></div>
                         </div>
                     </div>
-
                     <div class="skill-item w-full" data-skill="95">
-                        <div class="flex justify-between mb-2">
-                            <span>Tailwind CSS</span>
-                            <span class="skill-percent">0%</span>
-                        </div>
+                        <div class="flex justify-between mb-2"><span>Tailwind CSS</span><span class="skill-percent">0%</span></div>
                         <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
                             <div class="bg-[#BF2715] h-3 rounded-full progress-bar" style="width: 0%"></div>
                         </div>
                     </div>
-
                     <div class="skill-item w-full" data-skill="85">
-                        <div class="flex justify-between mb-2">
-                            <span>JavaScript</span>
-                            <span class="skill-percent">0%</span>
-                        </div>
+                        <div class="flex justify-between mb-2"><span>JavaScript</span><span class="skill-percent">0%</span></div>
                         <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
                             <div class="bg-[#BF2715] h-3 rounded-full progress-bar" style="width: 0%"></div>
                         </div>
                     </div>
-
                     <div class="skill-item w-full" data-skill="80">
-                        <div class="flex justify-between mb-2">
-                            <span>React</span>
-                            <span class="skill-percent">0%</span>
-                        </div>
+                        <div class="flex justify-between mb-2"><span>React</span><span class="skill-percent">0%</span></div>
                         <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
                             <div class="bg-[#BF2715] h-3 rounded-full progress-bar" style="width: 0%"></div>
                         </div>
                     </div>
-
                     <div class="skill-item w-full" data-skill="90">
-                        <div class="flex justify-between mb-2">
-                            <span>Git & GitHub</span>
-                            <span class="skill-percent">0%</span>
-                        </div>
+                        <div class="flex justify-between mb-2"><span>Git & GitHub</span><span class="skill-percent">0%</span></div>
                         <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
                             <div class="bg-[#BF2715] h-3 rounded-full progress-bar" style="width: 0%"></div>
                         </div>
                     </div>
-
                     <div class="skill-item w-full" data-skill="85">
-                        <div class="flex justify-between mb-2">
-                            <span>Adobe XD</span>
-                            <span class="skill-percent">0%</span>
-                        </div>
+                        <div class="flex justify-between mb-2"><span>Adobe XD</span><span class="skill-percent">0%</span></div>
                         <div class="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
                             <div class="bg-[#BF2715] h-3 rounded-full progress-bar" style="width: 0%"></div>
                         </div>
                     </div>
-
                 </div>
             </section>
 
             <!-- بخش نمونه کارها -->
             <section id="portfolio" class="py-20 border-t border-white/10 px-4 md:px-0">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#BF2715] mb-8" data-aos="fade-up">
-                    نمونه کارهای منتخب
-                </h2>
-
-                <!-- 👇 محدودیت عرض فقط برای موبایل -->
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-xs sm:max-w-sm md:max-w-none mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#BF2715] mb-8" data-aos="fade-up" data-i18n="portfolioHeading">نمونه کارهای منتخب</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-xs sm:max-w-sm md:max-w-none mx-auto">
 
                     <a href="pet-dock.html" class="block group">
-                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 
-                hover:bg-white/10 transition-all duration-300 
-                hover:scale-105">
-
+                        <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105">
                             <div class="overflow-hidden rounded-lg mb-4">
-                                <img src="pic-s/pik.webp" loading="lazy" alt="دکتر استوک"
-                                    class="w-full transition-all duration-500 group-hover:scale-110">
+                                <img src="pic-s/pik.webp" loading="lazy" alt="دکتر استوک" class="w-full transition-all duration-500 group-hover:scale-110">
                             </div>
-
-                            <h3 class="text-xl font-bold mb-2">
-                                وبسایت فروشگاهی
-                            </h3>
-
-                            <p class="text-gray-400">
-                                دکتر استوک
-                            </p>
-
-                            <p class="text-gray-400">
-                                فروشگاه لپ تاپ های استوک / نو
-                            </p>
-
-                            <p class="text-gray-400">
-                                طراحی و توسعه فرانت اند
-                            </p>
-
+                            <h3 class="text-xl font-bold mb-2" data-i18n="portfolio1Type">وبسایت فروشگاهی</h3>
+                            <p class="text-gray-400" data-i18n="portfolio1Name">دکتر استوک</p>
+                            <p class="text-gray-400" data-i18n="portfolio1Desc">فروشگاه لپ تاپ های استوک / نو</p>
+                            <p class="text-gray-400" data-i18n="portfolio1Role">طراحی و توسعه فرانت اند</p>
                         </div>
                     </a>
 
-                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                        data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
                         <div class="w-full h-40 bg-gradient-to-br from-[#BF2715] to-[#BF2715] rounded-lg mb-4"></div>
-                        <h3 class="text-xl font-bold mb-2">وبسایت</h3>
-                        <p class="text-gray-400">طراحی UI/UX</p>
+                        <h3 class="text-xl font-bold mb-2" data-i18n="portfolio2Type">وبسایت</h3>
+                        <p class="text-gray-400" data-i18n="portfolio2Role">طراحی UI/UX</p>
                     </div>
 
-                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                        data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white/5 backdrop-blur-sm rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
                         <div class="w-full h-40 bg-gradient-to-br from-[#BF2715] to-[#BF2715] rounded-lg mb-4"></div>
-                        <h3 class="text-xl font-bold mb-2">وبسایت</h3>
-                        <p class="text-gray-400">طراحی رابط کاربری</p>
+                        <h3 class="text-xl font-bold mb-2" data-i18n="portfolio3Type">وبسایت</h3>
+                        <p class="text-gray-400" data-i18n="portfolio3Role">طراحی رابط کاربری</p>
                     </div>
-
                 </div>
             </section>
 
             <!-- بخش ارتباط با من -->
             <section id="contact" class="py-20 border-t border-white/10">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#BF2715] mb-8 text-center md:text-right"
-                    data-aos="fade-up">
-                    ارتباط با من
-                </h2>
-
+                <h2 class="text-3xl md:text-4xl font-bold text-[#BF2715] mb-8 text-center md:text-center" data-aos="fade-up" data-i18n="contactHeading">ارتباط با من</h2>
                 <div class="grid md:grid-cols-2 gap-12">
                     <div data-aos="fade-left" class="text-center md:text-right">
                         <div class="space-y-4">
                             <div>
-                                <h3 class="text-xl font-bold text-[#BF2715] mb-2">تلگرام</h3>
-                                <a href="https://t.me/Mohammad_369_888"
-                                    class="text-gray-300">https://t.me/Mohammad_369_888</a>
+                                <h3 class="text-xl font-bold text-[#BF2715] mb-2" data-i18n="telegramTitle">تلگرام</h3>
+                                <a href="https://t.me/Mohammad_369_888" class="text-gray-300">https://t.me/Mohammad_369_888</a>
                             </div>
                             <div>
-                                <div>
-                                    <h3 class="text-xl font-bold text-[#BF2715] mb-2">شماره تماس</h3>
-                                    <a href="tel:09363316042" class="text-gray-300">09363316042</a>
-                                </div>
-                                <h3 class="text-xl font-bold text-[#BF2715] mb-2">ایمیل</h3>
+                                <h3 class="text-xl font-bold text-[#BF2715] mb-2" data-i18n="phoneTitle">شماره تماس</h3>
+                                <a href="tel:09363316042" class="text-gray-300">09363316042</a>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-[#BF2715] mb-2" data-i18n="emailTitle">ایمیل</h3>
                                 <p class="text-gray-300">mohammadbaghernajafi.com@gmail.com</p>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-[#BF2715] mb-2">موقعیت</h3>
-                                <p class="text-gray-300"> قم / ایران</p>
+                                <h3 class="text-xl font-bold text-[#BF2715] mb-2" data-i18n="locationTitle">موقعیت</h3>
+                                <p class="text-gray-300" data-i18n="locationText">قم / ایران</p>
                             </div>
                         </div>
                     </div>
 
                     <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-
                         <input type="hidden" name="access_key" value="f24a02e8-6685-446e-8d27-ba6300fb6f6a">
-
                         <div>
-                            <input type="email" name="email" placeholder="ایمیل شما" required
-                                class="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg focus:outline-none focus:border-[#A94438] transition-colors text-center md:text-right">
+                            <input type="email" name="email" placeholder="ایمیل شما" required data-i18n-placeholder="emailPlaceholder"
+                                class="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg focus:outline-none focus:border-[#A94438] transition-colors text-center md:text-center">
                         </div>
-
                         <div>
-                            <textarea rows="4" name="message" placeholder="پیام شما" required
-                                class="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg focus:outline-none focus:border-[#A94438] transition-colors text-center md:text-right"></textarea>
+                            <textarea rows="4" name="message" placeholder="پیام شما" required data-i18n-placeholder="messagePlaceholder"
+                                class="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg focus:outline-none focus:border-[#A94438] transition-colors text-center md:text-center"></textarea>
                         </div>
-
-                        <div class="text-center md:text-right">
-                            <button type="submit"
+                        <div class="text-center md:text-center">
+                            <button type="submit" data-i18n="sendButton"
                                 class="px-6 py-3 bg-[#C42F1D]/20 backdrop-blur-md border border-white/20 text-white rounded-lg hover:bg-[#C42F1D]/40 transition-all duration-300">
                                 ارسال پیام
                             </button>
                         </div>
-
                     </form>
-                    <!-- پیام نتیجه -->
                     <p id="result" class="mt-4 text-center"></p>
                 </div>
             </section>
 
-
         </main>
 
         <footer class="border-t border-white/10 py-6 text-center text-gray-500 relative z-10">
-            <p>© 2026 محمد نجفی. تمامی حقوق محفوظ است.</p>
+            <p data-i18n="footerText">© 2026 محمد نجفی. تمامی حقوق محفوظ است.</p>
         </footer>
 
     </div>
 
-    <!-- AOS Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-        AOS.init({
-            once: true,
-            duration: 800,
-            offset: 100
-        });
+        // ============================================================
+        // 1. TRANSLATIONS
+        // ============================================================
+        const translations = {
+            fa: {
+                pageTitle: "محمد نجفی | توسعه دهنده فرانت اند",
+                navHome: "خانه",
+                navAbout: "درباره من",
+                navSkills: "مهارت ها",
+                navPortfolio: "نمونه کارها",
+                navContact: "ارتباط با من",
+                heroName: "محمد نجفی",
+                heroRole1: "توسعه دهنده فرانت اند",
+                heroRole2: "طراح UI/UX",
+                heroRole3: "طراح Adobe XD",
+                heroCTA: "مشاهده نمونه کارها",
+                heroScroll: "اسکرول کنید ↓",
+                aboutHeading: "درباره من",
+                aboutText: "من محمد نجفی هستم. توسعه دهنده فرانت اند و طراح رابط کاربری با تمرکز روی طراحی دیجیتال و ایجاد تجربه های کاربری مدرن و حرفه ای. عاشق طراحی، تصمیم گیری و مدیریت سیستم های مختلف هستم و همیشه به دنبال یادگیری تکنولوژی های جدید برای ساخت پروژه های خلاقانه و با کیفیت.",
+                aboutCTA: "بیشتر بدانید ...",
+                skillsHeading: "مهارت های من",
+                portfolioHeading: "نمونه کارهای منتخب",
+                portfolio1Type: "وبسایت فروشگاهی",
+                portfolio1Name: "دکتر استوک",
+                portfolio1Desc: "فروشگاه لپ تاپ های استوک / نو",
+                portfolio1Role: "طراحی و توسعه فرانت اند",
+                portfolio2Type: "وبسایت",
+                portfolio2Role: "طراحی UI/UX",
+                portfolio3Type: "وبسایت",
+                portfolio3Role: "طراحی رابط کاربری",
+                contactHeading: "ارتباط با من",
+                telegramTitle: "تلگرام",
+                phoneTitle: "شماره تماس",
+                emailTitle: "ایمیل",
+                locationTitle: "موقعیت",
+                locationText: "قم / ایران",
+                emailPlaceholder: "ایمیل شما",
+                messagePlaceholder: "پیام شما",
+                sendButton: "ارسال پیام",
+                messageSuccess: "✅ پیام با موفقیت ارسال شد",
+                messageError: "❌ خطا در ارسال پیام",
+                footerText: "© 2026 محمد نجفی. تمامی حقوق محفوظ است."
+            },
+            en: {
+                pageTitle: "Mohammad Najafi | Front-End Developer",
+                navHome: "Home",
+                navAbout: "About Me",
+                navSkills: "Skills",
+                navPortfolio: "Portfolio",
+                navContact: "Contact Me",
+                heroName: "Mohammad Najafi",
+                heroRole1: "Front-End Developer",
+                heroRole2: "UI/UX Designer",
+                heroRole3: "Adobe XD Designer",
+                heroCTA: "View Portfolio",
+                heroScroll: "Scroll down ↓",
+                aboutHeading: "About Me",
+                aboutText: "I'm Mohammad Najafi, a Front-End Developer and UI Designer focused on digital design and creating modern, professional user experiences. I'm passionate about design, decision-making, and managing complex systems — always learning new technologies to build creative, high-quality projects.",
+                aboutCTA: "Learn More ...",
+                skillsHeading: "My Skills",
+                portfolioHeading: "Selected Works",
+                portfolio1Type: "E-commerce Website",
+                portfolio1Name: "Doctor Stock",
+                portfolio1Desc: "Used & New Laptop Store",
+                portfolio1Role: "Front-End Design & Development",
+                portfolio2Type: "Website",
+                portfolio2Role: "UI/UX Design",
+                portfolio3Type: "Website",
+                portfolio3Role: "User Interface Design",
+                contactHeading: "Contact Me",
+                telegramTitle: "Telegram",
+                phoneTitle: "Phone Number",
+                emailTitle: "Email",
+                locationTitle: "Location",
+                locationText: "Qom, Iran",
+                emailPlaceholder: "Your Email",
+                messagePlaceholder: "Your Message",
+                sendButton: "Send Message",
+                messageSuccess: "✅ Your message has been sent successfully",
+                messageError: "❌ An error occurred while sending your message",
+                footerText: "© 2026 Mohammad Najafi. All Rights Reserved."
+            }
+        };
 
+        // ============================================================
+        // 2. i18n ENGINE
+        // ============================================================
+        let currentLang = 'fa';
+
+        function t(key) {
+            return (translations[currentLang] || translations.fa)[key] || key;
+        }
+
+        function applyTranslations() {
+            // عنوان صفحه
+            document.getElementById('pageTitle').textContent = t('pageTitle');
+
+            // جهت HTML
+            const html = document.documentElement;
+            html.lang = currentLang;
+            html.dir = currentLang === 'en' ? 'ltr' : 'rtl';
+
+            // متن‌های data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const val = t(key);
+                if (val && val !== key) {
+                    const textNodes = Array.from(el.childNodes).filter(n => n.nodeType === 3);
+                    if (textNodes.length > 0) {
+                        textNodes[0].textContent = val;
+                    } else {
+                        el.textContent = val;
+                    }
+                }
+            });
+
+            // placeholder ها
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                const val = t(key);
+                if (val && val !== key) el.placeholder = val;
+            });
+
+            // برچسب زبان
+            const langLabel = document.getElementById('lang-label');
+            if (langLabel) langLabel.textContent = currentLang === 'fa' ? 'FA' : 'EN';
+
+            const mobileLangLabel = document.getElementById('mobile-lang-label');
+            if (mobileLangLabel) mobileLangLabel.textContent = currentLang === 'fa' ? 'FA' : 'EN';
+
+            // کلاس active روی گزینه‌های زبان
+            document.querySelectorAll('.lang-option, .mobile-lang-option').forEach(opt => {
+                opt.classList.remove('active');
+                const lang = opt.getAttribute('onclick')?.match(/setLang\('([^']+)'\)/)?.[1];
+                if (lang === currentLang) opt.classList.add('active');
+            });
+
+            // تراز متن در حالت انگلیسی
+            const heroText = document.getElementById('heroText');
+            const aboutText = document.getElementById('aboutText');
+            const aboutHeading = document.getElementById('aboutHeading');
+
+            if (currentLang === 'en') {
+                if (heroText) {
+                    heroText.classList.remove('text-center', 'md:text-right');
+                    heroText.classList.add('text-left', 'md:text-left');
+                }
+                if (aboutHeading) aboutHeading.classList.add('text-left');
+                if (aboutText) {
+                    aboutText.classList.remove('text-justify', 'md:text-right');
+                    aboutText.classList.add('text-left');
+                }
+            } else {
+                if (heroText) {
+                    heroText.classList.add('text-center', 'md:text-right');
+                    heroText.classList.remove('text-left', 'md:text-left');
+                }
+                if (aboutHeading) aboutHeading.classList.remove('text-left');
+                if (aboutText) {
+                    aboutText.classList.add('text-justify', 'md:text-right');
+                    aboutText.classList.remove('text-left');
+                }
+            }
+        }
+
+        // ============================================================
+        // 3. LANGUAGE SWITCHER
+        // ============================================================
+        function toggleDropdown() {
+            document.getElementById("langWrapper").classList.toggle("open");
+        }
+
+        function toggleMobileDropdown() {
+            document.getElementById("mobileLangWrapper").classList.toggle("open");
+        }
+
+        function setLang(lang) {
+            if (lang === currentLang) {
+                document.getElementById("langWrapper")?.classList.remove("open");
+                document.getElementById("mobileLangWrapper")?.classList.remove("open");
+                return;
+            }
+            currentLang = lang;
+            localStorage.setItem("siteLang", lang);
+            applyTranslations();
+            document.getElementById("langWrapper")?.classList.remove("open");
+            document.getElementById("mobileLangWrapper")?.classList.remove("open");
+        }
+
+        // ============================================================
+        // 4. MOBILE MENU
+        // ============================================================
         const menuBtn = document.getElementById("menuBtn");
         const mobileMenu = document.getElementById("mobileMenu");
         const menuItems = document.querySelectorAll(".mobile-item");
-
         let isOpen = false;
 
         function openMenu() {
             mobileMenu.classList.remove("max-h-0", "opacity-0");
             mobileMenu.classList.add("max-h-[500px]", "opacity-100");
             menuBtn.innerHTML = "✕";
-
             menuItems.forEach((item, index) => {
-                item.style.transform = "";
-                item.style.opacity = "";
                 item.style.animation = `revealItem 0.4s ease-out forwards`;
                 item.style.animationDelay = `${index * 0.15}s`;
             });
-
             isOpen = true;
         }
 
@@ -696,75 +793,56 @@
             mobileMenu.classList.remove("max-h-[500px]", "opacity-100");
             mobileMenu.classList.add("max-h-0", "opacity-0");
             menuBtn.innerHTML = "☰";
-
-            menuItems.forEach((item) => {
-                item.style.animation = "";
-                item.style.animationDelay = "";
-            });
-
+            menuItems.forEach(item => { item.style.animation = ""; item.style.animationDelay = ""; });
             isOpen = false;
         }
 
-        menuBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            if (isOpen) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
+        menuBtn.addEventListener("click", e => { e.stopPropagation(); isOpen ? closeMenu() : openMenu(); });
+        document.addEventListener("click", e => { if (isOpen && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) closeMenu(); });
+        window.addEventListener("resize", () => { if (window.innerWidth >= 768) closeMenu(); });
+
+        // بستن dropdown زبان با کلیک بیرون
+        document.addEventListener("click", e => {
+            const wrapper = document.getElementById("langWrapper");
+            if (wrapper && !wrapper.contains(e.target)) wrapper.classList.remove("open");
+            const mobileWrapper = document.getElementById("mobileLangWrapper");
+            if (mobileWrapper && !mobileWrapper.contains(e.target)) mobileWrapper.classList.remove("open");
         });
 
-        document.addEventListener("click", (e) => {
-            if (isOpen && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                closeMenu();
-            }
-        });
-
-        window.addEventListener("resize", () => {
-            if (window.innerWidth >= 768) {
-                closeMenu();
-            }
-        });
-
+        // ============================================================
+        // 5. SMOOTH SCROLL
+        // ============================================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
                 if (isOpen) closeMenu();
             });
         });
 
+        // ============================================================
+        // 6. SKILLS ANIMATION
+        // ============================================================
         const skillItems = document.querySelectorAll('.skill-item');
 
         function checkSkills() {
             skillItems.forEach(item => {
                 const rect = item.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight - 100;
-
-                if (isVisible && !item.classList.contains('visible')) {
+                if (rect.top < window.innerHeight - 100 && !item.classList.contains('visible')) {
                     item.classList.add('visible');
-
                     const targetPercent = item.getAttribute('data-skill');
                     const progressBar = item.querySelector('.progress-bar');
                     const percentSpan = item.querySelector('.skill-percent');
-
                     if (progressBar) {
                         progressBar.style.setProperty('--target-width', targetPercent + '%');
                         progressBar.style.width = targetPercent + '%';
                     }
-
                     if (percentSpan) {
                         let current = 0;
                         const interval = setInterval(() => {
-                            if (current >= targetPercent) {
-                                clearInterval(interval);
-                            } else {
-                                current++;
-                                percentSpan.textContent = current + '%';
-                            }
+                            if (current >= targetPercent) { clearInterval(interval); }
+                            else { current++; percentSpan.textContent = current + '%'; }
                         }, 15);
                     }
                 }
@@ -773,39 +851,42 @@
 
         window.addEventListener('scroll', checkSkills);
         window.addEventListener('load', checkSkills);
+
+        // ============================================================
+        // 7. CONTACT FORM
+        // ============================================================
         const form = document.getElementById("contactForm");
         const result = document.getElementById("result");
 
-        form.addEventListener("submit", async (e) => {
+        form.addEventListener("submit", async e => {
             e.preventDefault();
-
             const formData = new FormData(form);
-
-            const response = await fetch(
-                "https://api.web3forms.com/submit",
-                {
-                    method: "POST",
-                    body: formData
-                }
-            );
-
-            const data = await response.json();
-
-            if (data.success) {
-                result.innerHTML = "✅ پیام با موفقیت ارسال شد";
-                form.reset();
-            } else {
-                result.innerHTML = "❌ خطا در ارسال پیام";
-            }
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+                const data = await response.json();
+                if (data.success) { result.innerHTML = t('messageSuccess'); form.reset(); }
+                else { result.innerHTML = t('messageError'); }
+            } catch { result.innerHTML = t('messageError'); }
         });
-        // اسکرول هدر موبایل
+
+        // ============================================================
+        // 8. HEADER SCROLL EFFECT
+        // ============================================================
         const mobileHeader = document.getElementById("mobile-header");
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) {
-                mobileHeader.classList.add("scrolled");
-            } else {
-                mobileHeader.classList.remove("scrolled");
-            }
+            mobileHeader.classList.toggle("scrolled", window.scrollY > 10);
+        });
+
+        // ============================================================
+        // 9. INITIALIZE
+        // ============================================================
+        window.addEventListener("DOMContentLoaded", () => {
+            const savedLang = localStorage.getItem("siteLang");
+            const browserLang = navigator.language || navigator.languages?.[0] || 'fa';
+            currentLang = savedLang || (browserLang.startsWith('en') ? 'en' : 'fa');
+            if (!translations[currentLang]) currentLang = 'fa';
+            applyTranslations();
+            AOS.init({ once: true, duration: 800, offset: 100 });
         });
     </script>
 </body>
